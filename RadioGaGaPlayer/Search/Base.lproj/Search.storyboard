@@ -27,17 +27,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search artists, songs.." translatesAutoresizingMaskIntoConstraints="NO" id="uP7-Pa-by1">
-                                <rect key="frame" x="15" y="20" width="275" height="56"/>
+                                <rect key="frame" x="15" y="20" width="345" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iw3-Uy-sJb">
-                                <rect key="frame" x="300" y="20" width="55" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="UkI-gU-wTj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <state key="normal" title="Cancel"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xv-OS-U2o">
                                 <rect key="frame" x="0.0" y="76" width="375" height="40"/>
                                 <subviews>
@@ -54,6 +46,9 @@
                                             <constraint firstAttribute="width" constant="12" id="XCM-sn-ISv"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="close"/>
+                                        <connections>
+                                            <action selector="onClear:" destination="uOs-MD-nCE" eventType="touchUpInside" id="j4t-k3-JlF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,24 +210,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uP7-Pa-by1" firstAttribute="top" secondItem="hP4-na-5Ji" secondAttribute="top" id="1bS-KR-csi"/>
+                            <constraint firstItem="hP4-na-5Ji" firstAttribute="trailing" secondItem="uP7-Pa-by1" secondAttribute="trailing" constant="15" id="68d-Wf-3o4"/>
                             <constraint firstItem="hP4-na-5Ji" firstAttribute="trailing" secondItem="4xv-OS-U2o" secondAttribute="trailing" id="DjW-y5-uh1"/>
-                            <constraint firstItem="Iw3-Uy-sJb" firstAttribute="height" secondItem="uP7-Pa-by1" secondAttribute="height" id="NOX-UF-ke5"/>
                             <constraint firstItem="4xv-OS-U2o" firstAttribute="top" secondItem="uP7-Pa-by1" secondAttribute="bottom" id="SCo-ws-wQL"/>
                             <constraint firstItem="4xv-OS-U2o" firstAttribute="leading" secondItem="hP4-na-5Ji" secondAttribute="leading" id="U8V-Hs-aUr"/>
-                            <constraint firstItem="Iw3-Uy-sJb" firstAttribute="top" secondItem="hP4-na-5Ji" secondAttribute="top" id="UFo-cz-jSB"/>
-                            <constraint firstItem="hP4-na-5Ji" firstAttribute="trailing" secondItem="Iw3-Uy-sJb" secondAttribute="trailing" constant="20" id="WmL-Q8-lYP"/>
-                            <constraint firstItem="Iw3-Uy-sJb" firstAttribute="centerY" secondItem="uP7-Pa-by1" secondAttribute="centerY" id="jaA-mw-zm0"/>
                             <constraint firstItem="uP7-Pa-by1" firstAttribute="leading" secondItem="hP4-na-5Ji" secondAttribute="leading" constant="15" id="kuM-R3-9GM"/>
                             <constraint firstAttribute="bottom" secondItem="P8s-JM-8Bk" secondAttribute="bottom" id="mLU-sU-cbc"/>
                             <constraint firstItem="P8s-JM-8Bk" firstAttribute="top" secondItem="4xv-OS-U2o" secondAttribute="bottom" id="rb2-Ul-dQU"/>
                             <constraint firstItem="P8s-JM-8Bk" firstAttribute="leading" secondItem="hP4-na-5Ji" secondAttribute="leading" id="tBb-Sd-aAv"/>
-                            <constraint firstItem="Iw3-Uy-sJb" firstAttribute="leading" secondItem="uP7-Pa-by1" secondAttribute="trailing" constant="10" id="u78-MR-DPZ"/>
                             <constraint firstItem="hP4-na-5Ji" firstAttribute="trailing" secondItem="P8s-JM-8Bk" secondAttribute="trailing" id="ywA-O5-mMP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hP4-na-5Ji"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q7v-CQ-Crb"/>
                     <connections>
+                        <outlet property="btnClear" destination="hz6-N4-7Gt" id="awj-k9-56E"/>
+                        <outlet property="lblRecentSearches" destination="3Md-Np-ZRC" id="LBe-Sp-Y9j"/>
+                        <outlet property="searchBar" destination="uP7-Pa-by1" id="XrI-WM-Shz"/>
                         <outlet property="tvSearch" destination="P8s-JM-8Bk" id="dXj-qe-yzI"/>
                     </connections>
                 </viewController>

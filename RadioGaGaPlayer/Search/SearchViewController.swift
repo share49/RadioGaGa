@@ -12,6 +12,9 @@ final class SearchViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var tvSearch: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var btnClear: UIButton!
+    @IBOutlet weak var lblRecentSearches: UILabel!
     
     // MARK: - UIViewController
     static func create() -> UIViewController {
@@ -20,6 +23,26 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        styleView()
+    }
+    
+    func styleView() {
+        view.backgroundColor = Theme.backgroundColor
+
+        tvSearch.backgroundColor = Theme.backgroundColor
+        tvSearch.tableFooterView = UIView(frame: .zero)
+    }
+    
+    // MARK: - onButton Actions
+    @IBAction func onClear(_ sender: UIButton) {
+        //FixMe - Handle this
+    }
+    
+    // MARK: - Deinit
+    deinit {
+        I("Dealloc: SearchViewController")
     }
 }
 
@@ -35,5 +58,11 @@ extension SearchViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //FixMe - Handle iTunes search
     }
 }
