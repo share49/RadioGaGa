@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB9E8B0C21EE02B80003ECF5"
+               BuildableName = "RadioGaGaPlayer.app"
+               BlueprintName = "RadioGaGaPlayer"
+               ReferencedContainer = "container:RadioGaGaPlayer.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DB9E8B0C21EE02B80003ECF5"
+            BuildableName = "RadioGaGaPlayer.app"
+            BlueprintName = "RadioGaGaPlayer"
+            ReferencedContainer = "container:RadioGaGaPlayer.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>
