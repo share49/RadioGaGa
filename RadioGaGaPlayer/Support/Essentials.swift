@@ -8,6 +8,11 @@
 
 import Foundation
 
+// MARK: - Threading
+public func onMain(_ closure: @escaping () -> ()) {
+    DispatchQueue.main.async(execute: closure)
+}
+
 // MARK: - Logging
 func E(_ message: String) {
     NSLog("🛑 \(message)")
@@ -16,3 +21,6 @@ func E(_ message: String) {
 func I(_ message: String) {
     NSLog("ℹ️ \(message)")
 }
+
+typealias JSONObject = [String: Any]
+typealias JSONArray = [[String: Any]]
