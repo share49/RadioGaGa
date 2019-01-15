@@ -31,14 +31,21 @@ final class SearchViewController: UIViewController {
         styleView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if let selectedRow = self.tvSearch.indexPathForSelectedRow {
             self.tvSearch.deselectRow(at: selectedRow, animated: true)
         }
     }
     
     func styleView() {
-        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = Theme.backgroundColor
 
         tvSearch.backgroundColor = Theme.backgroundColor
@@ -73,6 +80,10 @@ final class SearchViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    func clearSearchResults() {
+        searchResults.removeAll()
     }
     
     // MARK: - Deinit
@@ -110,6 +121,8 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, text != "" {
             if searchBar.isFirstResponder { searchBar.resignFirstResponder() }
+            
+            clearSearchResults()
             
             searchiTunesApi(text: text) {
                 onMain { self.tvSearch.reloadData() }
