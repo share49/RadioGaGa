@@ -31,7 +31,14 @@ final class SearchViewController: UIViewController {
         styleView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let selectedRow = self.tvSearch.indexPathForSelectedRow {
+            self.tvSearch.deselectRow(at: selectedRow, animated: true)
+        }
+    }
+    
     func styleView() {
+        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = Theme.backgroundColor
 
         tvSearch.backgroundColor = Theme.backgroundColor
@@ -87,6 +94,15 @@ extension SearchViewController: UITableViewDataSource {
         
         cell.setupCell(searchResult: searchResults[indexPath.row])
         return cell
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nvc = navigationController else { return }
+        
+        let navigator = Navigator.init(navigationController: nvc)
+        navigator.navigate(to: .player(index: indexPath.row, searchResults: searchResults))
     }
 }
 

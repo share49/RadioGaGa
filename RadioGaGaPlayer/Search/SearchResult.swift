@@ -18,6 +18,7 @@ struct SearchResult {
     var genre: String
     var price: Double
     var coverUrl: String
+    var previewUrl: String
     
     init(resultData: JSONObject) {
         title = resultData[k.searchResults.title] as? String ?? ls.unknownTitle
@@ -26,7 +27,8 @@ struct SearchResult {
         genre = resultData[k.searchResults.genre] as? String ?? ls.unknownGenre
         price = resultData[k.searchResults.price] as? Double ?? 0.0
         coverUrl = resultData[k.searchResults.coverUrl] as? String ?? ""
-        
+        previewUrl = resultData[k.searchResults.previewUrl] as? String ?? ""
+
         let date = resultData[k.searchResults.releaseDate] as? String ?? ls.unknownDate
         releaseDate = date != ls.unknownDate ? String(date.prefix(10)) : ls.unknownDate //FixMe - May need refactoring to handle this properly
         

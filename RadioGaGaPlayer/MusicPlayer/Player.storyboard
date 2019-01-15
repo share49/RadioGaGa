@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="mF2-yr-bJ7">
+            <objects>
+                <viewController storyboardIdentifier="PlayerVC" id="4WA-yD-Jys" customClass="PlayerViewController" customModule="RadioGaGaPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F1X-zG-row">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-ah-ctz">
+                                <rect key="frame" x="60" y="70" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3Cz-6P-APf"/>
+                                    <constraint firstAttribute="width" secondItem="Yun-ah-ctz" secondAttribute="height" multiplier="1:1" id="ai6-XN-z3O"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="144-Tv-xMx">
+                                <rect key="frame" x="141" y="290" width="38" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Nd-QU-7TX">
+                                <rect key="frame" x="139" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Nd-QU-7TX" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="OqO-Ew-wa6"/>
+                            <constraint firstItem="144-Tv-xMx" firstAttribute="top" secondItem="Yun-ah-ctz" secondAttribute="bottom" constant="20" id="PMs-tP-D4E"/>
+                            <constraint firstItem="144-Tv-xMx" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="WMD-PM-kEh"/>
+                            <constraint firstItem="Yun-ah-ctz" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="WVj-aa-Gr9"/>
+                            <constraint firstItem="Yun-ah-ctz" firstAttribute="top" secondItem="E3K-On-iyj" secondAttribute="top" constant="50" id="pCd-ld-Ydr"/>
+                            <constraint firstItem="9Nd-QU-7TX" firstAttribute="top" secondItem="144-Tv-xMx" secondAttribute="bottom" constant="10" id="yID-Jf-ki5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E3K-On-iyj"/>
+                    </view>
+                    <connections>
+                        <outlet property="ivCover" destination="Yun-ah-ctz" id="GM1-zV-Abb"/>
+                        <outlet property="lblArtist" destination="9Nd-QU-7TX" id="tVe-eO-OT9"/>
+                        <outlet property="lblTitle" destination="144-Tv-xMx" id="ZCy-oI-frq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-mq-H2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="59"/>
+        </scene>
+    </scenes>
+</document>

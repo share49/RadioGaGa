@@ -15,10 +15,12 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 struct k {
     struct storyboards {
         static let search = "Search"
+        static let player = "Player"
     }
     
     struct viewControllers {
         static let search = "SearchVC"
+        static let player = "PlayerVC"
     }
     
     struct cells {
@@ -39,6 +41,7 @@ struct k {
         static let genre = "primaryGenreName"
         static let price = "trackPrice"
         static let coverUrl = "artworkUrl60"
+        static let previewUrl = "previewUrl"
     }
 }
 

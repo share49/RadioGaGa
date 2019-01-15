@@ -25,6 +25,10 @@
 		DBE52EF521EE2A0A00BD8B29 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EF421EE2A0A00BD8B29 /* SearchResult.swift */; };
 		DBE52EF721EE2E4000BD8B29 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EF621EE2E4000BD8B29 /* UIImageView+Ext.swift */; };
 		DBE52EFB21EE33E300BD8B29 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EFA21EE33E300BD8B29 /* TimeInterval+Ext.swift */; };
+		DBE52EFE21EE3D8600BD8B29 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE52EFD21EE3D8600BD8B29 /* Player.storyboard */; };
+		DBE52F0021EE3D9D00BD8B29 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EFF21EE3D9D00BD8B29 /* PlayerViewController.swift */; };
+		DBE52F0421EE3DF400BD8B29 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52F0221EE3DF400BD8B29 /* Destination.swift */; };
+		DBE52F0521EE3DF400BD8B29 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52F0321EE3DF400BD8B29 /* Navigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		DBE52EF421EE2A0A00BD8B29 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DBE52EF621EE2E4000BD8B29 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		DBE52EFA21EE33E300BD8B29 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
+		DBE52EFD21EE3D8600BD8B29 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		DBE52EFF21EE3D9D00BD8B29 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		DBE52F0221EE3DF400BD8B29 /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		DBE52F0321EE3DF400BD8B29 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 				DBE52EEA21EE168F00BD8B29 /* Support */,
 				DBE52EF121EE1F4B00BD8B29 /* Extensions */,
 				DBE52ED821EE090700BD8B29 /* Search */,
+				DBE52EFC21EE3D5D00BD8B29 /* MusicPlayer */,
 			);
 			path = RadioGaGaPlayer;
 			sourceTree = "<group>";
@@ -118,6 +127,7 @@
 		DBE52EEA21EE168F00BD8B29 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				DBE52F0121EE3DF400BD8B29 /* Navigator */,
 				DBE52EED21EE178600BD8B29 /* Essentials.swift */,
 				DBE52EEB21EE16C900BD8B29 /* Common.swift */,
 				DBE52EEF21EE1B0100BD8B29 /* Theme.swift */,
@@ -133,6 +143,24 @@
 				DBE52EFA21EE33E300BD8B29 /* TimeInterval+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DBE52EFC21EE3D5D00BD8B29 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				DBE52EFD21EE3D8600BD8B29 /* Player.storyboard */,
+				DBE52EFF21EE3D9D00BD8B29 /* PlayerViewController.swift */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		DBE52F0121EE3DF400BD8B29 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				DBE52F0221EE3DF400BD8B29 /* Destination.swift */,
+				DBE52F0321EE3DF400BD8B29 /* Navigator.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +226,7 @@
 				DB9E8B1821EE02B90003ECF5 /* Assets.xcassets in Resources */,
 				DB9E8B1621EE02B80003ECF5 /* Search.storyboard in Resources */,
 				DBE52EE521EE116900BD8B29 /* Lato-Black.ttf in Resources */,
+				DBE52EFE21EE3D8600BD8B29 /* Player.storyboard in Resources */,
 				DBE52EE421EE116900BD8B29 /* Lato-Bold.ttf in Resources */,
 				DBE52EE721EE116900BD8B29 /* Lato-Light.ttf in Resources */,
 			);
@@ -213,8 +242,11 @@
 				DBE52EEE21EE178600BD8B29 /* Essentials.swift in Sources */,
 				DBE52EF521EE2A0A00BD8B29 /* SearchResult.swift in Sources */,
 				DBE52EE921EE130D00BD8B29 /* RecentSearchCell.swift in Sources */,
+				DBE52F0421EE3DF400BD8B29 /* Destination.swift in Sources */,
 				DBE52EDB21EE092E00BD8B29 /* SearchCell.swift in Sources */,
 				DBE52EDC21EE092E00BD8B29 /* SearchViewController.swift in Sources */,
+				DBE52F0021EE3D9D00BD8B29 /* PlayerViewController.swift in Sources */,
+				DBE52F0521EE3DF400BD8B29 /* Navigator.swift in Sources */,
 				DBE52EEC21EE16C900BD8B29 /* Common.swift in Sources */,
 				DBE52EF721EE2E4000BD8B29 /* UIImageView+Ext.swift in Sources */,
 				DB9E8B1121EE02B80003ECF5 /* AppDelegate.swift in Sources */,
