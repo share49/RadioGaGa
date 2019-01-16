@@ -97,6 +97,13 @@ final class PlayerViewController: UIViewController {
         getSong(track: .next)
     }
     
+    @IBAction func onShare(_ sender: UIButton) {
+        let songLink = songs[songIndex].previewUrl
+        let activityViewController = UIActivityViewController(activityItems: [songLink], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true)
+    }
+    
     // MARK: - Deinit
     deinit {
         I("Dealloc: PlayerViewController")
