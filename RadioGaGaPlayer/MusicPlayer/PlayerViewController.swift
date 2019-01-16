@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class PlayerViewController: UIViewController {
 
@@ -14,10 +15,18 @@ final class PlayerViewController: UIViewController {
     @IBOutlet weak var ivCover: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblArtist: UILabel!
+    @IBOutlet weak var btnPlayPause: UIButton!
     
     // MARK: - Var and const
     var songIndex = Int()
     var songs = [SearchResult]()
+    var songPlayer: AVPlayer?
+    
+    // MARK: - Enums
+    enum SwitchTrack: CaseIterable {
+        case next
+        case previous
+    }
     
     // MARK: - UIViewController
     static func create(index: Int, songs: [SearchResult]) -> UIViewController {
@@ -41,5 +50,55 @@ final class PlayerViewController: UIViewController {
         ivCover.getAndCacheImage(stringUrl: song.coverUrl)
         lblTitle.text = song.title
         lblArtist.text = song.artist
+    }
+    
+    // MARK: - Support methods
+    func loadSongPlayer() {
+        guard let url = URL(string: songs[songIndex].previewUrl) else { return }
+        
+        let playerItem = AVPlayerItem.init(url: url)
+        songPlayer = AVPlayer.init(playerItem: playerItem)
+    }
+    
+    func playPauseSong() {
+        if songPlayer == nil {
+            btnPlayPause.setTitle(ls.pause, for: .normal)
+            loadSongPlayer()
+            songPlayer?.play()
+        } else if songPlayer?.rate != 0 && songPlayer?.error == nil {
+            btnPlayPause.setTitle(ls.play, for: .normal)
+            songPlayer?.pause()
+        } else {
+            btnPlayPause.setTitle(ls.pause, for: .normal)
+            songPlayer?.play()
+        }
+    }
+    
+    func getSong(track: SwitchTrack) {
+        songPlayer = nil
+        songIndex = track == SwitchTrack.next ? songIndex + 1 : songIndex - 1
+        playPauseSong()
+        
+        UIView.animate(withDuration: 0.3) {
+            self.styleView()
+        }
+    }
+    
+    // MARK: - onButton Actions
+    @IBAction func onPlayPause(_ sender: UIButton) {
+        playPauseSong()
+    }
+    
+    @IBAction func onPreviousSong(_ sender: UIButton) {
+        getSong(track: .previous)
+    }
+    
+    @IBAction func onNextSong(_ sender: UIButton) {
+        getSong(track: .next)
+    }
+    
+    // MARK: - Deinit
+    deinit {
+        I("Dealloc: PlayerViewController")
     }
 }

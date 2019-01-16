@@ -37,19 +37,56 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-V2-6sN">
+                                <rect key="frame" x="144" y="415" width="32" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="onPlayPause:" destination="4WA-yD-Jys" eventType="touchUpInside" id="NM1-wY-Ten"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf0-KC-Yuv">
+                                <rect key="frame" x="196" y="418" width="80" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="tga-5E-RIE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Next song"/>
+                                <connections>
+                                    <action selector="onNextSong:" destination="4WA-yD-Jys" eventType="touchUpInside" id="A1c-8D-TTg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yt-Jq-7Uk">
+                                <rect key="frame" x="44" y="418" width="80" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="jbx-E1-VEo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Previous song"/>
+                                <connections>
+                                    <action selector="onPreviousSong:" destination="4WA-yD-Jys" eventType="touchUpInside" id="SDh-O6-GB9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2yt-Jq-7Uk" firstAttribute="centerY" secondItem="dOH-V2-6sN" secondAttribute="centerY" id="0HY-tJ-EOz"/>
+                            <constraint firstItem="Qf0-KC-Yuv" firstAttribute="leading" secondItem="dOH-V2-6sN" secondAttribute="trailing" constant="20" id="2g2-Ug-667"/>
                             <constraint firstItem="9Nd-QU-7TX" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="OqO-Ew-wa6"/>
+                            <constraint firstItem="E3K-On-iyj" firstAttribute="bottom" secondItem="dOH-V2-6sN" secondAttribute="bottom" constant="120" id="PGt-tw-oua"/>
                             <constraint firstItem="144-Tv-xMx" firstAttribute="top" secondItem="Yun-ah-ctz" secondAttribute="bottom" constant="20" id="PMs-tP-D4E"/>
                             <constraint firstItem="144-Tv-xMx" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="WMD-PM-kEh"/>
                             <constraint firstItem="Yun-ah-ctz" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="WVj-aa-Gr9"/>
+                            <constraint firstItem="Qf0-KC-Yuv" firstAttribute="centerY" secondItem="dOH-V2-6sN" secondAttribute="centerY" id="f0a-L7-eSS"/>
+                            <constraint firstItem="dOH-V2-6sN" firstAttribute="leading" secondItem="2yt-Jq-7Uk" secondAttribute="trailing" constant="20" id="kC4-ez-hYj"/>
+                            <constraint firstItem="dOH-V2-6sN" firstAttribute="centerX" secondItem="F1X-zG-row" secondAttribute="centerX" id="lrC-4E-krc"/>
                             <constraint firstItem="Yun-ah-ctz" firstAttribute="top" secondItem="E3K-On-iyj" secondAttribute="top" constant="50" id="pCd-ld-Ydr"/>
                             <constraint firstItem="9Nd-QU-7TX" firstAttribute="top" secondItem="144-Tv-xMx" secondAttribute="bottom" constant="10" id="yID-Jf-ki5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E3K-On-iyj"/>
                     </view>
                     <connections>
+                        <outlet property="btnPlayPause" destination="dOH-V2-6sN" id="PTn-NG-sMn"/>
                         <outlet property="ivCover" destination="Yun-ah-ctz" id="GM1-zV-Abb"/>
                         <outlet property="lblArtist" destination="9Nd-QU-7TX" id="tVe-eO-OT9"/>
                         <outlet property="lblTitle" destination="144-Tv-xMx" id="ZCy-oI-frq"/>
@@ -57,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-mq-H2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="59"/>
+            <point key="canvasLocation" x="-270" y="58.098591549295776"/>
         </scene>
     </scenes>
 </document>

@@ -52,4 +52,6 @@ struct ls {
     static let unknownAlbum = "Unknown album"
     static let unknownGenre = "Unknown genre"
     static let unknownDate = "Unknown date"
+    static let play = "Play"
+    static let pause = "Pause"
 }
