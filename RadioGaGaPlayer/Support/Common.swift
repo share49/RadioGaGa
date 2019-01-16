@@ -54,4 +54,6 @@ struct ls {
     static let unknownDate = "Unknown date"
     static let play = "Play"
     static let pause = "Pause"
+    static let ok = "Ok"
+    static let oopsWeCouldntPlayTheSong = "Oops, we couldn't find the song"
 }

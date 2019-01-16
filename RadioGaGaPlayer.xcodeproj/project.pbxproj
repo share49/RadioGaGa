@@ -17,7 +17,6 @@
 		DBE52EE521EE116900BD8B29 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE52EE121EE116900BD8B29 /* Lato-Black.ttf */; };
 		DBE52EE621EE116900BD8B29 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE52EE221EE116900BD8B29 /* Lato-Regular.ttf */; };
 		DBE52EE721EE116900BD8B29 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE52EE321EE116900BD8B29 /* Lato-Light.ttf */; };
-		DBE52EE921EE130D00BD8B29 /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EE821EE130D00BD8B29 /* RecentSearchCell.swift */; };
 		DBE52EEC21EE16C900BD8B29 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EEB21EE16C900BD8B29 /* Common.swift */; };
 		DBE52EEE21EE178600BD8B29 /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EED21EE178600BD8B29 /* Essentials.swift */; };
 		DBE52EF021EE1B0100BD8B29 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE52EEF21EE1B0100BD8B29 /* Theme.swift */; };
@@ -44,7 +43,6 @@
 		DBE52EE121EE116900BD8B29 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		DBE52EE221EE116900BD8B29 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		DBE52EE321EE116900BD8B29 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		DBE52EE821EE130D00BD8B29 /* RecentSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchCell.swift; sourceTree = "<group>"; };
 		DBE52EEB21EE16C900BD8B29 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DBE52EED21EE178600BD8B29 /* Essentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Essentials.swift; sourceTree = "<group>"; };
 		DBE52EEF21EE1B0100BD8B29 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				DB9E8B1421EE02B80003ECF5 /* Search.storyboard */,
 				DBE52EDA21EE092E00BD8B29 /* SearchViewController.swift */,
 				DBE52ED921EE092E00BD8B29 /* SearchCell.swift */,
-				DBE52EE821EE130D00BD8B29 /* RecentSearchCell.swift */,
 				DBE52EF421EE2A0A00BD8B29 /* SearchResult.swift */,
 			);
 			path = Search;
@@ -241,7 +238,6 @@
 			files = (
 				DBE52EEE21EE178600BD8B29 /* Essentials.swift in Sources */,
 				DBE52EF521EE2A0A00BD8B29 /* SearchResult.swift in Sources */,
-				DBE52EE921EE130D00BD8B29 /* RecentSearchCell.swift in Sources */,
 				DBE52F0421EE3DF400BD8B29 /* Destination.swift in Sources */,
 				DBE52EDB21EE092E00BD8B29 /* SearchCell.swift in Sources */,
 				DBE52EDC21EE092E00BD8B29 /* SearchViewController.swift in Sources */,

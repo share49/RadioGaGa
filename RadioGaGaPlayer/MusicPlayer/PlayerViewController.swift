@@ -52,9 +52,33 @@ final class PlayerViewController: UIViewController {
         lblArtist.text = song.artist
     }
     
+    // MARK: - onButton Actions
+    @IBAction func onPlayPause(_ sender: UIButton) {
+        playPauseSong()
+    }
+    
+    @IBAction func onPreviousSong(_ sender: UIButton) {
+        getSong(track: .previous)
+    }
+    
+    @IBAction func onNextSong(_ sender: UIButton) {
+        getSong(track: .next)
+    }
+    
+    @IBAction func onShare(_ sender: UIButton) {
+        let songLink = songs[songIndex].previewUrl
+        let activityViewController = UIActivityViewController(activityItems: [songLink], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true)
+    }
+    
     // MARK: - Support methods
     func loadSongPlayer() {
-        guard let url = URL(string: songs[songIndex].previewUrl) else { return }
+        guard let url = URL(string: songs[songIndex].previewUrl) else {
+            showOkAlertWithMessage(title: ls.oopsWeCouldntPlayTheSong)
+            btnPlayPause.setTitle(ls.play, for: .normal)
+            return
+        }
         
         let playerItem = AVPlayerItem.init(url: url)
         songPlayer = AVPlayer.init(playerItem: playerItem)
@@ -84,24 +108,11 @@ final class PlayerViewController: UIViewController {
         }
     }
     
-    // MARK: - onButton Actions
-    @IBAction func onPlayPause(_ sender: UIButton) {
-        playPauseSong()
-    }
-    
-    @IBAction func onPreviousSong(_ sender: UIButton) {
-        getSong(track: .previous)
-    }
-    
-    @IBAction func onNextSong(_ sender: UIButton) {
-        getSong(track: .next)
-    }
-    
-    @IBAction func onShare(_ sender: UIButton) {
-        let songLink = songs[songIndex].previewUrl
-        let activityViewController = UIActivityViewController(activityItems: [songLink], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        present(activityViewController, animated: true)
+    func showOkAlertWithMessage(title: String) {
+        let alert = UIAlertController(title: nil, message: title, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: ls.ok, style: .cancel))
+        alert.modalPresentationStyle = .popover
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Deinit

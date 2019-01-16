@@ -22,5 +22,6 @@ func I(_ message: String) {
     NSLog("ℹ️ \(message)")
 }
 
+// MARK: - Typealias
 typealias JSONObject = [String: Any]
 typealias JSONArray = [[String: Any]]
