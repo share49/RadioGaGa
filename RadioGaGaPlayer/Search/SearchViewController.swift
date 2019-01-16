@@ -13,11 +13,18 @@ final class SearchViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tvSearch: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var btnClear: UIButton!
-    @IBOutlet weak var lblRecentSearches: UILabel!
     
     // MARK: - Var and const
     var searchResults = [SearchResult]()
+    var lastSortButtonPressed: UIButton?
+    var isAscendingOrder = true
+    
+    // MARK: - Enums
+    enum SortOrder: CaseIterable {
+        case songLength
+        case genre
+        case price
+    }
     
     // MARK: - UIViewController
     static func create() -> UIViewController {
@@ -53,8 +60,16 @@ final class SearchViewController: UIViewController {
     }
     
     // MARK: - onButton Actions
-    @IBAction func onClear(_ sender: UIButton) {
-        //FixMe - Handle this
+    @IBAction func onSortLength(_ sender: UIButton) {
+        sortSearchResults(order: .songLength, button: sender)
+    }
+    
+    @IBAction func onSortGenre(_ sender: UIButton) {
+        sortSearchResults(order: .genre, button: sender)
+    }
+    
+    @IBAction func onSortPrice(_ sender: UIButton) {
+        sortSearchResults(order: .price, button: sender)
     }
     
     // MARK: - Support methods
@@ -84,6 +99,25 @@ final class SearchViewController: UIViewController {
     
     func clearSearchResults() {
         searchResults.removeAll()
+    }
+    
+    func sortSearchResults(order: SortOrder, button: UIButton) {
+        isAscendingOrder = lastSortButtonPressed != button ? true : isAscendingOrder
+        
+        if order == SortOrder.songLength {
+            searchResults = searchResults.sorted(by: { isAscendingOrder ? $0.songLength < $1.songLength : $0.songLength > $1.songLength })
+            
+        } else if order == SortOrder.genre {
+            searchResults = searchResults.sorted(by: { isAscendingOrder ? $0.genre < $1.genre : $0.genre > $1.genre })
+            
+        } else if order == SortOrder.price {
+            searchResults = searchResults.sorted(by: { isAscendingOrder ? $0.price < $1.price : $0.price > $1.price })
+        }
+        
+        lastSortButtonPressed = button
+        isAscendingOrder = !isAscendingOrder
+        
+        tvSearch.reloadData()
     }
     
     // MARK: - Deinit

@@ -33,32 +33,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xv-OS-U2o">
                                 <rect key="frame" x="0.0" y="76" width="375" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Recent searches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Md-Np-ZRC">
-                                        <rect key="frame" x="20" y="0.0" width="311" height="40"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-N4-7Gt">
-                                        <rect key="frame" x="343" y="14" width="12" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="QM8-He-vfQ"/>
-                                            <constraint firstAttribute="width" constant="12" id="XCM-sn-ISv"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="close"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqF-IF-gkZ">
+                                        <rect key="frame" x="12" y="5" width="77" height="30"/>
+                                        <state key="normal" title="Sort length"/>
                                         <connections>
-                                            <action selector="onClear:" destination="uOs-MD-nCE" eventType="touchUpInside" id="j4t-k3-JlF"/>
+                                            <action selector="onSortLength:" destination="uOs-MD-nCE" eventType="touchUpInside" id="buO-t7-dbK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pk-kB-wFi">
+                                        <rect key="frame" x="295" y="5" width="68" height="30"/>
+                                        <state key="normal" title="Sort price"/>
+                                        <connections>
+                                            <action selector="onSortPrice:" destination="uOs-MD-nCE" eventType="touchUpInside" id="1kL-cD-wrp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-9y-Z75">
+                                        <rect key="frame" x="151" y="5" width="73" height="30"/>
+                                        <state key="normal" title="Sort genre"/>
+                                        <connections>
+                                            <action selector="onSortGenre:" destination="uOs-MD-nCE" eventType="touchUpInside" id="Q4E-vs-exn"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="3Md-Np-ZRC" firstAttribute="top" secondItem="4xv-OS-U2o" secondAttribute="top" id="EDH-LO-0dO"/>
-                                    <constraint firstItem="hz6-N4-7Gt" firstAttribute="centerY" secondItem="3Md-Np-ZRC" secondAttribute="centerY" id="ETx-Oq-mLG"/>
-                                    <constraint firstAttribute="trailing" secondItem="hz6-N4-7Gt" secondAttribute="trailing" constant="20" id="FNp-8h-xS2"/>
-                                    <constraint firstItem="3Md-Np-ZRC" firstAttribute="leading" secondItem="4xv-OS-U2o" secondAttribute="leading" constant="20" id="Gnd-Aw-K6F"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Md-Np-ZRC" secondAttribute="bottom" id="eg6-uB-Ucz"/>
-                                    <constraint firstItem="hz6-N4-7Gt" firstAttribute="leading" secondItem="3Md-Np-ZRC" secondAttribute="trailing" constant="12" id="sZi-Rd-JjZ"/>
+                                    <constraint firstItem="QqF-IF-gkZ" firstAttribute="centerY" secondItem="4xv-OS-U2o" secondAttribute="centerY" id="HGB-la-wOQ"/>
+                                    <constraint firstItem="9Pk-kB-wFi" firstAttribute="centerY" secondItem="4xv-OS-U2o" secondAttribute="centerY" id="OtH-6x-bSB"/>
+                                    <constraint firstItem="QqF-IF-gkZ" firstAttribute="leading" secondItem="4xv-OS-U2o" secondAttribute="leading" constant="12" id="eD0-im-19Y"/>
+                                    <constraint firstItem="KvZ-9y-Z75" firstAttribute="centerX" secondItem="4xv-OS-U2o" secondAttribute="centerX" id="ldf-K6-0Bq"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Pk-kB-wFi" secondAttribute="trailing" constant="12" id="mcn-FY-bR9"/>
+                                    <constraint firstItem="KvZ-9y-Z75" firstAttribute="centerY" secondItem="4xv-OS-U2o" secondAttribute="centerY" id="p5a-Nh-fMm"/>
                                     <constraint firstAttribute="height" constant="40" id="zY6-jI-21B"/>
                                 </constraints>
                             </view>
@@ -238,8 +242,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Q7v-CQ-Crb"/>
                     <connections>
-                        <outlet property="btnClear" destination="hz6-N4-7Gt" id="awj-k9-56E"/>
-                        <outlet property="lblRecentSearches" destination="3Md-Np-ZRC" id="LBe-Sp-Y9j"/>
                         <outlet property="searchBar" destination="uP7-Pa-by1" id="XrI-WM-Shz"/>
                         <outlet property="tvSearch" destination="P8s-JM-8Bk" id="dXj-qe-yzI"/>
                     </connections>
@@ -250,7 +252,4 @@
             <point key="canvasLocation" x="304.80000000000001" y="112.89355322338831"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="close" width="51.200000762939453" height="51.200000762939453"/>
-    </resources>
 </document>
